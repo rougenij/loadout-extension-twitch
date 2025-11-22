@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Loadout Viewer - Twitch Extension</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(135deg, #0f0f23, #1a1a2e);
+        color: #ffffff;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .container {
+        max-width: 800px;
+        padding: 40px;
+        text-align: center;
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 20px;
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .logo {
+        font-size: 48px;
+        margin-bottom: 20px;
+      }
+
+      h1 {
+        font-size: 36px;
+        margin-bottom: 20px;
+        background: linear-gradient(135deg, #9147ff, #772ce8);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .description {
+        font-size: 18px;
+        margin-bottom: 40px;
+        color: rgba(255, 255, 255, 0.8);
+        line-height: 1.6;
+      }
+
+      .components {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+        margin-bottom: 40px;
+      }
+
+      .component-card {
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 15px;
+        padding: 30px;
+        transition: transform 0.3s ease, border-color 0.3s ease;
+      }
+
+      .component-card:hover {
+        transform: translateY(-5px);
+        border-color: #9147ff;
+      }
+
+      .component-icon {
+        font-size: 40px;
+        margin-bottom: 15px;
+      }
+
+      .component-title {
+        font-size: 24px;
+        margin-bottom: 15px;
+        color: #9147ff;
+      }
+
+      .component-desc {
+        color: rgba(255, 255, 255, 0.7);
+        margin-bottom: 20px;
+      }
+
+      .component-link {
+        display: inline-block;
+        padding: 12px 24px;
+        background: linear-gradient(135deg, #9147ff, #772ce8);
+        color: white;
+        text-decoration: none;
+        border-radius: 8px;
+        font-weight: 500;
+        transition: transform 0.2s ease;
+      }
+
+      .component-link:hover {
+        transform: scale(1.05);
+      }
+
+      .features {
+        text-align: left;
+        margin-bottom: 40px;
+      }
+
+      .features h3 {
+        color: #9147ff;
+        margin-bottom: 20px;
+        text-align: center;
+      }
+
+      .feature-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+      }
+
+      .feature {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        color: rgba(255, 255, 255, 0.8);
+      }
+
+      .feature-icon {
+        color: #9147ff;
+        font-size: 20px;
+      }
+
+      .footer {
+        margin-top: 40px;
+        padding-top: 30px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        color: rgba(255, 255, 255, 0.6);
+      }
+
+      .status {
+        display: inline-block;
+        padding: 8px 16px;
+        background: rgba(34, 197, 94, 0.2);
+        color: #22c55e;
+        border-radius: 20px;
+        font-size: 14px;
+        margin-bottom: 20px;
+      }
+
+      @media (max-width: 768px) {
+        .container {
+          margin: 20px;
+          padding: 30px 20px;
+        }
+
+        h1 {
+          font-size: 28px;
+        }
+
+        .components {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="logo">🎮</div>
+      <h1>Loadout Viewer</h1>
+      <div class="status">✅ Extension Ready</div>
+
+      <p class="description">
+        A comprehensive Twitch extension that displays Call of Duty loadouts in
+        real-time. Available as both a panel component and video overlay for the
+        ultimate viewing experience.
+      </p>
+
+      <div class="components">
+        <div class="component-card">
+          <div class="component-icon">📱</div>
+          <h3 class="component-title">Panel Component</h3>
+          <p class="component-desc">
+            Traditional side panel for detailed loadout viewing with clean
+            interface and tabbed navigation.
+          </p>
+          <a href="./panel.html" class="component-link">View Panel</a>
+        </div>
+
+        <div class="component-card">
+          <div class="component-icon">🎥</div>
+          <h3 class="component-title">Video Overlay</h3>
+          <p class="component-desc">
+            Floating overlay on the video stream with interactive controls and
+            keyboard shortcuts.
+          </p>
+          <a href="./video.html" class="component-link">View Overlay</a>
+        </div>
+      </div>
+
+      <div class="features">
+        <h3>🌟 Features</h3>
+        <div class="feature-grid">
+          <div class="feature">
+            <span class="feature-icon">🔄</span>
+            <span>Real-time updates from Firebase</span>
+          </div>
+          <div class="feature">
+            <span class="feature-icon">👀</span>
+            <span>Public loadouts only</span>
+          </div>
+          <div class="feature">
+            <span class="feature-icon">🖼️</span>
+            <span>Full image support</span>
+          </div>
+          <div class="feature">
+            <span class="feature-icon">⌨️</span>
+            <span>Keyboard shortcuts</span>
+          </div>
+          <div class="feature">
+            <span class="feature-icon">📱</span>
+            <span>Responsive design</span>
+          </div>
+          <div class="feature">
+            <span class="feature-icon">🎨</span>
+            <span>Twitch-themed UI</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer">
+        <p>🚀 Ready for Twitch Extension deployment</p>
+        <p>Built with TypeScript, Firebase, and ❤️</p>
+      </div>
+    </div>
+  </body>
+</html>
