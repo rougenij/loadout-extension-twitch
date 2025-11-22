@@ -1,0 +1,202 @@
+<!doctype html><html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Loadout Viewer</title><style>* {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background: #0e0e10;
+        color: #efeff1;
+        font-size: 12px;
+        line-height: 1.4;
+      }
+
+      .container {
+        padding: 8px;
+        max-height: 300px;
+        overflow-y: auto;
+      }
+
+      .header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 12px;
+        padding-bottom: 8px;
+        border-bottom: 1px solid #464649;
+      }
+
+      .title {
+        font-size: 14px;
+        font-weight: 600;
+        color: #9147ff;
+      }
+
+      .loadout-selector {
+        display: flex;
+        gap: 4px;
+        margin-bottom: 12px;
+      }
+
+      .loadout-btn {
+        background: #464649;
+        border: none;
+        color: #efeff1;
+        padding: 4px 8px;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 11px;
+        transition: background-color 0.2s;
+      }
+
+      .loadout-btn:hover {
+        background: #5a5a5d;
+      }
+
+      .loadout-btn.active {
+        background: #9147ff;
+      }
+
+      .loadout-content {
+        display: none;
+      }
+
+      .loadout-content.active {
+        display: block;
+      }
+
+      .section {
+        margin-bottom: 12px;
+      }
+
+      .section-title {
+        font-size: 11px;
+        font-weight: 600;
+        color: #adadb8;
+        margin-bottom: 6px;
+        text-transform: uppercase;
+      }
+
+      .weapon-item,
+      .equipment-item {
+        background: #18181b;
+        border: 1px solid #464649;
+        border-radius: 4px;
+        padding: 6px;
+        margin-bottom: 4px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .weapon-image,
+      .equipment-image {
+        width: 32px;
+        height: 32px;
+        background: #464649;
+        border-radius: 3px;
+        object-fit: cover;
+        flex-shrink: 0;
+      }
+
+      .item-info {
+        flex: 1;
+        min-width: 0;
+      }
+
+      .item-name {
+        font-size: 12px;
+        font-weight: 500;
+        color: #efeff1;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      .item-category {
+        font-size: 10px;
+        color: #adadb8;
+      }
+
+      .attachments {
+        margin-top: 4px;
+      }
+
+      .attachment {
+        display: inline-block;
+        background: #464649;
+        color: #efeff1;
+        padding: 2px 6px;
+        border-radius: 2px;
+        font-size: 9px;
+        margin-right: 4px;
+        margin-bottom: 2px;
+      }
+
+      .perks-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 4px;
+      }
+
+      .perk-item {
+        background: #18181b;
+        border: 1px solid #464649;
+        border-radius: 4px;
+        padding: 4px;
+        text-align: center;
+      }
+
+      .perk-image {
+        width: 24px;
+        height: 24px;
+        background: #464649;
+        border-radius: 3px;
+        object-fit: cover;
+        margin: 0 auto 4px;
+      }
+
+      .perk-name {
+        font-size: 9px;
+        color: #efeff1;
+        line-height: 1.2;
+      }
+
+      .loading {
+        text-align: center;
+        color: #adadb8;
+        padding: 20px;
+      }
+
+      .error {
+        text-align: center;
+        color: #ff6b6b;
+        padding: 20px;
+        font-size: 11px;
+      }
+
+      .empty {
+        text-align: center;
+        color: #adadb8;
+        padding: 20px;
+        font-size: 11px;
+      }
+
+      /* Scrollbar styling */
+      ::-webkit-scrollbar {
+        width: 6px;
+      }
+
+      ::-webkit-scrollbar-track {
+        background: #18181b;
+      }
+
+      ::-webkit-scrollbar-thumb {
+        background: #464649;
+        border-radius: 3px;
+      }
+
+      ::-webkit-scrollbar-thumb:hover {
+        background: #5a5a5d;
+      }</style><script defer="defer" src="panel.js"></script></head><body><div class="container"><div class="header"><div class="title">Current Loadouts</div></div><div id="loading" class="loading">Loading loadouts...</div><div id="error" class="error" style="display: none">Failed to load loadouts</div><div id="content" style="display: none"><div class="loadout-selector" id="loadout-selector"></div><div id="loadout-content"></div></div><div id="empty" class="empty" style="display: none">No public loadouts available</div></div></body></html>
