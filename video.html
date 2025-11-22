@@ -306,4 +306,30 @@
           top: 10px;
           right: 10px;
         }
-      }</style><script defer="defer" src="video.js"></script></head><body><div class="overlay-container" id="overlay-container"><div class="minimize-icon" id="minimize-icon">🎮</div><div class="overlay-content" id="overlay-content"><div class="overlay-header"><div class="overlay-title"><div class="title-icon">🎮</div>Current Loadout</div><div class="overlay-controls"><button class="control-btn" id="minimize-btn" title="Minimize">−</button> <button class="control-btn" id="close-btn" title="Close">×</button></div></div><div style="padding: 16px"><div id="loading-overlay" class="loading-overlay">Loading loadouts...</div><div id="error-overlay" class="error-overlay" style="display: none">Failed to load loadouts</div><div id="content-overlay" style="display: none"><div class="loadout-tabs" id="loadout-tabs"></div><div id="loadout-display"></div></div><div id="empty-overlay" class="empty-overlay" style="display: none">No public loadouts available</div></div></div></div></body></html>
+      }
+
+      /* Reviewer Notice Styles */
+      .reviewer-notice {
+        background: #ff4444;
+        color: white;
+        padding: 8px 12px;
+        margin: 12px;
+        border-radius: 6px;
+        text-align: center;
+        font-weight: bold;
+        font-size: 11px;
+        border: 2px solid #cc0000;
+        animation: pulse 2s infinite;
+      }
+
+      @keyframes pulse {
+        0% {
+          box-shadow: 0 0 0 0 rgba(255, 68, 68, 0.7);
+        }
+        70% {
+          box-shadow: 0 0 0 10px rgba(255, 68, 68, 0);
+        }
+        100% {
+          box-shadow: 0 0 0 0 rgba(255, 68, 68, 0);
+        }
+      }</style><script defer="defer" src="video.js"></script></head><body><div class="overlay-container" id="overlay-container"><div class="minimize-icon" id="minimize-icon">🎮</div><div class="overlay-content" id="overlay-content"><div class="overlay-header"><div class="overlay-title"><div class="title-icon">🎮</div>Current Loadout</div><div class="overlay-controls"><button class="control-btn" id="minimize-btn" title="Minimize">−</button> <button class="control-btn" id="close-btn" title="Close">×</button></div></div><div class="reviewer-notice">⚠️ FOR REVIEWERS: Mock data used.<br/>Production will fetch from database.</div><div style="padding: 16px"><div id="loading-overlay" class="loading-overlay">Loading loadouts...</div><div id="error-overlay" class="error-overlay" style="display: none">Failed to load loadouts</div><div id="content-overlay" style="display: none"><div class="loadout-tabs" id="loadout-tabs"></div><div id="loadout-display"></div></div><div id="empty-overlay" class="empty-overlay" style="display: none">No public loadouts available</div></div></div></div></body></html>
