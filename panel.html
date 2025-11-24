@@ -199,30 +199,4 @@
 
       ::-webkit-scrollbar-thumb:hover {
         background: #5a5a5d;
-      }
-
-      /* Reviewer Notice Styles */
-      .reviewer-notice {
-        background: #ff4444;
-        color: white;
-        padding: 8px;
-        margin-bottom: 12px;
-        border-radius: 4px;
-        text-align: center;
-        font-weight: bold;
-        font-size: 13px;
-        border: 2px solid #cc0000;
-        animation: pulse 2s infinite;
-      }
-
-      @keyframes pulse {
-        0% {
-          box-shadow: 0 0 0 0 rgba(255, 68, 68, 0.7);
-        }
-        70% {
-          box-shadow: 0 0 0 10px rgba(255, 68, 68, 0);
-        }
-        100% {
-          box-shadow: 0 0 0 0 rgba(255, 68, 68, 0);
-        }
-      }</style><script defer="defer" src="panel.js"></script></head><body><div class="container"><div class="reviewer-notice">⚠️ FOR REVIEWERS: This extension currently uses mock data.<br/>In the released version, it will fetch from database.</div><div class="header"><div class="title">Current Loadouts</div></div><div id="loading" class="loading">Loading loadouts...</div><div id="error" class="error" style="display: none">Failed to load loadouts</div><div id="content" style="display: none"><div class="loadout-selector" id="loadout-selector"></div><div id="loadout-content"></div></div><div id="empty" class="empty" style="display: none">No public loadouts available</div></div></body></html>
+      }</style><script defer="defer" src="panel.js"></script></head><body><div class="container"><div class="header"><div class="title">Current Loadouts</div></div><div id="loading" class="loading">Loading loadouts...</div><div id="error" class="error" style="display: none">Failed to load loadouts</div><div id="content" style="display: none"><div class="loadout-selector" id="loadout-selector"></div><div id="loadout-content"></div></div><div id="empty" class="empty" style="display: none">No public loadouts available</div></div></body></html>
